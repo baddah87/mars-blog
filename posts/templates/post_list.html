@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List</title>
+</head>
+<body>
+
+
+<h1>List</h1>
+
+<ol>
+{% for x in list %}
+
+
+<a href="{% url 'detail' post_id=x.id %}"><li>{{x.title}}</li></a>
+
+{% endfor %}
+</ol>
+
+</body>
+</html>
