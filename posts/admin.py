@@ -1,16 +1,24 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 from django.contrib import admin
+
 from .models import Post
-
-class PostModelAdmin(admin.ModelAdmin):
-	list_display = ["title", "author"]
-	search_fields = ["title", "author", "content"]
-	list_display_link = ["author"]
-	list_editable =["author"]
-
-	class Mets:
-		model = Post
 
 
 
 # Register your models here.
-admin.site.register(Post, PostModelAdmin)
+class PostModelAdmin(admin.ModelAdmin):
+	list_display= ['title', 'timestamp' , 'updated']
+	search_fields = ['title' , 'content']
+	list_filter = ['timestamp']
+	list_display_links = ['timestamp']
+	
+	class Meta:
+
+		model = Post
+
+
+
+
+admin.site.register(Post, PostModelAdmin)	
